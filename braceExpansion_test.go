@@ -7,6 +7,10 @@ import (
 	"testing"
 )
 
+
+// Using test format from https://talks.golang.org/2014/testing.slide#23
+// Tests spawn off a sub process to run the code being tested & then check it's exit status
+
 // Input string contains illegal characters
 var illegalCharacterInput = []struct {
 	name string
@@ -27,7 +31,7 @@ func TestValidateInputMatchesAlphabet(t *testing.T) {
 		cmd.Env = append(os.Environ(), "validateInputMatchesAlphabet=1")
 		err := cmd.Run()
 		if e, ok := err.(*exec.ExitError); ok && !e.Success() {
-			// Input is invalid-- test passes
+			// Input is invalid -- test passes
 			continue
 		}
 		t.Fatalf("process ran with err %v, want exit status 1", err)
@@ -93,7 +97,6 @@ func TestCheckValidBraces(t *testing.T) {
 		t.Fatalf("process ran with err %v, want exit status 1", err)
 
 	}
-
 }
 
 // Full expansion test

@@ -7,16 +7,13 @@ import (
 	"strings"
 )
 
-const emptyValues = "{[a-zA-z]*,*}"
-
-
 // This program implements a similar behavior to bash's brace expansion.
 // For a valid input, it will expand the expression and return it as a string.
 // For invalid input, it will print nothing and exit.
 
 // Input characters are restricted to [a-zA-Z{},]
 // An example invocation of the program will be:
-// 	$ echo "{A,B,C}" | okCupidTakeHome
+// 	$ echo "{A,B,C}" | OkCupidBashExpansion
 // And it should print:
 // 	A B C
 

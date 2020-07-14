@@ -11,7 +11,6 @@ import (
 //	2. expression = expression_part expression_part (One or more expression parts)
 //	3. expression_part = letter | {statement} (A letter OR a statement)
 
-
 //Initial state
 var index = 0
 var inputString = ""
@@ -27,7 +26,7 @@ func Expand(input string) (resultString string) {
 	return
 }
 
-// A Statement is made up of comma separated expressions
+// A statement is made up of comma separated expressions
 // To parse a statement, we parse each expression and concatenate the results
 func parseStatement() (result []string) {
 	for index < len(inputString){
